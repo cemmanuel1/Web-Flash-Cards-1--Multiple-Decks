@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Welcome to AUTH AMAZING!</h1>
+  <p><a href="/user/new">Create an account</a></p>
+
+  <p>Login to your account</p>
+
+  <% if @message %>
+    <p style="color:red"><%= @message %></p>
+  <% end %>
+
+  <form id="login_form" action="/user/login" method="post">
+    <input type="text" name="email" placeholder="Enter Your Email Here:"><br><br>
+    <input type="text" name="password" placeholder="Enter Your Password Here:"><br><br>
+    <input type="submit" value="Sign in!">
+  </form>
+</div>
