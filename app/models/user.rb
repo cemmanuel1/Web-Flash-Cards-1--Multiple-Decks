@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :email, :format => { :with => /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/, :message => "Invalid Email" }
   validates :email, :uniqueness => true
 
+  has_many :urls
+
   before_save :encrypt_password
 
   def encrypt_password

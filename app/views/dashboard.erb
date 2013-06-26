@@ -1,5 +1,25 @@
 <div class="container">
   <h1>Welcome <%= @user.name %></h1>
 
+  <h1>Welcome to Get Shorty</h1>
+
+  <table>
+    <tr>
+      <th width="25%">Short Url</th>
+      <th width="50%">Long Url</th>
+      <th width="25%">Click Count</th>
+    </tr>
+  <% @urls.each do |url| %>
+    <tr>
+      <td><%= url.short_address %></td>
+      <td><%= url.address %></td>
+      <td><%= url.click_count %></td>
+    </tr>
+  <% end %>
+</table>
+
+  <br>
+  <a href="/url/new">Create New Short URL</a><br>
+
   <a href="/user/logout">Logout</a>
 </div>

@@ -13,4 +13,24 @@
     <input type="text" name="password" placeholder="Enter Your Password Here:"><br><br>
     <input type="submit" value="Sign in!">
   </form>
+
+ <h1>Here are the public URLs</h1>
+
+  <table>
+    <tr>
+      <th width="25%">Short Url</th>
+      <th width="50%">Long Url</th>
+      <th width="25%">Click Count</th>
+    </tr>
+  <% @urls.each do |url| %>
+    <tr>
+      <td><%= url.short_address %></td>
+      <td><%= url.address %></td>
+      <td><%= url.click_count %></td>
+    </tr>
+  <% end %>
+</table>
+
+  <br>
+  <a href="/url/new">Create New Short URL</a><br>
 </div>
