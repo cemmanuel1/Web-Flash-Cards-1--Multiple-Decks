@@ -1,0 +1,10 @@
+<div id="card">
+  <p>Here is your card:</p>
+  <% unless @card.blank? %>
+    <%= @card.question %>
+    <form action="/round/submit_answer" method="post">
+      <input type="text" name="guess">
+      <input type="submit" value="Guess!">
+    </form>
+  <% end %>
+</div>

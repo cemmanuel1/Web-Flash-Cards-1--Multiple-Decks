@@ -4,7 +4,8 @@ post '/round/play' do
 end
 
 get '/round/flipcard/:round_id' do
-  @cards = find_unseen_cards
+  @card = find_unseen_cards.sample
+  erb :show_card
 end
 
 # Click on play

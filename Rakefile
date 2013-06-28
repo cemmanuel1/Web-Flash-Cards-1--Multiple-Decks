@@ -111,6 +111,11 @@ namespace :db do
   task :seed do
     require APP_ROOT.join('db', 'seeds.rb')
   end
+  
+  desc "RESET!!!"
+  task :reset do
+    Round.delete_all
+  end
 
   desc "Returns the current schema version number"
   task :version do
