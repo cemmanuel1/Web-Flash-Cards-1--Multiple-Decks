@@ -2,7 +2,6 @@ get '/' do
   if logged_in?
     redirect "/user/dashboard"
   else
-    @urls = Url.where(user_id: nil)
     erb :index
   end
 end
