@@ -1,5 +1,5 @@
 get '/' do
-  if is_signed_in?
+  if logged_in?
     redirect "/user/dashboard"
   else
     erb :index
@@ -12,7 +12,7 @@ get "/user/new" do
 end
 
 get "/user/dashboard" do
-  unless is_signed_in?
+  unless logged_in?
     @message = "Login you Bastard!"
     erb :index
   else
