@@ -14,11 +14,11 @@ end
 get "/user/dashboard" do
   unless logged_in?
     @message = "Login you Bastard!"
-    @urls = Url.where(user_id: nil)
+    @decks = Deck.all
     erb :index
   else
     @user = current_user
-    @urls = @user.urls
+    @decks = Deck.all
     erb :dashboard
   end
 end
