@@ -11,18 +11,6 @@ get "/user/new" do
   erb :user_form
 end
 
-get "/user/dashboard" do
-  unless logged_in?
-    @message = "Login you Bastard!"
-    @decks = Deck.all
-    erb :index
-  else
-    @user = current_user
-    @decks = Deck.all
-    erb :dashboard
-  end
-end
-
 post "/user/create" do
   @user = User.new(params[:user])
 
@@ -32,5 +20,17 @@ post "/user/create" do
     redirect "/user/dashboard"
   else
     erb :user_form
+  end
+end
+
+get "/user/dashboard" do
+  unless logged_in?
+    @message = "Login you Bastard!"
+    @decks = Deck.all
+    erb :index
+  else
+    @user = current_user
+    @decks = Deck.all
+    erb :dashboard
   end
 end
