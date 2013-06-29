@@ -1,8 +1,14 @@
 <div class="container">
+
+
   <h1>Sign Up!!</h1>
+
+
   <% unless @user.errors.blank? %>
     <p style="color:red"><%= @user.errors[:email] %></p>
   <% end %>
+
+  
   <br>
   <form id="user_form" action="/user/create" method="post">
     <input type="text" name="user[name]" placeholder="Enter Your Name Here:" value="<%= @user.name%>"><br><br>

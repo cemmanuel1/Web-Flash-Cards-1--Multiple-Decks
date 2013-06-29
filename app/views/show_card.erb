@@ -1,12 +1,27 @@
-<div id="card">
-  <p>Here is your card:</p>
-  <% unless @card.blank? %>
-    <%= @card.question %>
-    <form action="/round/<%= @round.id %>/card/<%= @card.id %>/submit" method="post">
-      <input type="text" name="guess">
-      <input type="submit" value="Guess!">
-    </form>
-  <% end %>
 
-  <a href="/round/<%= @round.id %>/results">QUIT LIKE THE BITCH YOU ARE</a>
+<div class= "top-nav">
+	<h2>Flash Me!</h2> 
+	<img src="/bolt.gif" alt="bolt" width='50px' height='50px'>
+
+
+	<form action="/user/logout" method="get">
+		<button class="logout" type="submit" formmethod="get"  formaction="/user/logout">Logout</button > </form>
+
 </div>
+
+<div class="dash">
+		<div id="card">
+			<% unless @card.blank? %>
+				<span class="q">Question:
+				<%= @card.question %>
+			<form class="QA"action="/round/<%= @round.id %>/card/<%= @card.id %>/submit" method="post"></span> 
+				<input type="text" name="guess">
+				<br>
+				<input class="guess" type="submit" value="Guess!">
+			</form>
+			<% end %>
+		</div>
+<div class=>
+
+
+<a class="quit" href="/round/<%= @round.id %>/results">QUIT LIKE THE BITCH YOU ARE</a>
