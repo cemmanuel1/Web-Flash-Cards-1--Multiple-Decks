@@ -5,7 +5,7 @@ end
 
 get '/round/:round_id/flipcard' do
   @round = Round.find(params[:round_id])
-  @card = get_unseen_card(@round.deck)
+  @card = get_unseen_card(@round)
   redirect "/round/#{@round.id}/results" unless @card
   @guess = Guess.new
   erb :show_card
