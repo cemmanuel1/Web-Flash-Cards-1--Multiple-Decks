@@ -16,8 +16,8 @@
 }
 
 #bolt{
-
 }
+
 th {
   text-align: left;
 }
@@ -60,6 +60,12 @@ h2{
   background-color: gray;
 }
 
+.quit {
+  position: absolute;
+  bottom: 10px;
+  text-align: right;
+  margin-left:70%;}
+
 .login {
   font-family: 'Offside', cursive;
   top: 150px;
@@ -94,4 +100,40 @@ h2{
   height: 40px;
   background-color: #3498DB;
   color: white;
+}
+
+.guess{
+  border-radius: 8px;
+}
+
+.guess:hover{
+  background-color: black;
+  color: white;
+}
+
+.space{
+}
+.q {
+  font-size: 32px;
+  text-decoration: bold;
+}
+
+.guess {
+    margin-top:180px;
+}
+
+#card {
+  background-image: url('/yellow.gif');
+  font-family: 'Offside', cursive;
+  text-align: center;
+  border-radius: 12px;
+  top: 200px;
+  line-height: 5em;
+  position: relative;
+  padding: 20px 20px 20px 20px;
+  border: 1px solid black;
+  width: 600px;
+  margin: auto auto;
+  margin-bottom: 20px;
+  height: 300px;
 }

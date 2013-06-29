@@ -15,7 +15,7 @@ post '/round/:round_id/card/:card_id/submit' do
   card = Card.find(params[:card_id])
   is_correct = params[:guess].downcase == card.answer.downcase
   guess = Guess.create(card_id: card.id, round_id:  params[:round_id], 
-                        is_correct: is_correct, answer: params[:guess])
+    is_correct: is_correct, answer: params[:guess])
   redirect "/round/#{params[:round_id]}/flipcard"
 end
 
