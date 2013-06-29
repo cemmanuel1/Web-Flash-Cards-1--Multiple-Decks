@@ -1,18 +1,6 @@
 <div class="container">
   <h1>Welcome to FlashCards <%= @user.name %></h1>
 
-  <table>
-    <tr>
-      <th> Name of Deck</th>
-      <th> Number of Cards</th>
-    </tr>
-  <% @decks.each do |deck| %>
-    <tr>
-      <td><%= deck.name %></td>
-      <td><%= deck.cards.count %></td>
-    </tr>
-  <% end %>
-
   <form method="post" action="/round/play">
     <select name="deck_id">
       <% @decks.each do |deck| %>
@@ -21,9 +9,18 @@
     </select>
     <input type='submit' value='Play!'>
   </form>
-</table>
+
+  
+  <h3>Previous Rounds</h3>
+  <% current_user.rounds.each do |round| %>
+    <div class="deck_name"><%= round.deck.name%></div>
+    <div class="number_correct"><%= round.number_correct%></div>
+    <div class="number_incorrect"><%= round.number_incorrect%></div>
+    <a href="/round/#{round.id}/flipcard">Continue</a>
+    <a href="/round/#{round.id}/results">Results</a>
+    <% end %>
+
 
   <br>
-
   <a href="/user/logout">Logout</a>
 </div>
