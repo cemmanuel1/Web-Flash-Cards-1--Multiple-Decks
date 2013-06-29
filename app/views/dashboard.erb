@@ -1,29 +1,26 @@
-<div class="container">
-  <h1>Welcome to FlashCards <%= @user.name %></h1>
+<div class= "top-nav">
+  <h2>Flash Me!</h2> 
+  <img src="/bolt.gif" alt="bolt" width='50px' height='50px'>
 
-  <table>
-    <tr>
-      <th> Name of Deck</th>
-      <th> Number of Cards</th>
-    </tr>
-  <% @decks.each do |deck| %>
-    <tr>
-      <td><%= deck.name %></td>
-      <td><%= deck.cards.count %></td>
-    </tr>
-  <% end %>
+
+<form action="/user/logout" method="get">
+<button class="logout" type="submit" formmethod="get"  formaction="/user/logout">Logout</button > </form>
+
+</div>
+
+<h1>Welcome to Flash Me! <%= @user.name %></h1>
+
+<div class="screen">
 
   <form method="post" action="/round/play">
-    <select name="deck_id">
+    <select class="drop_down" name="deck_id">
       <% @decks.each do |deck| %>
-      <option value="<%= deck.id %>"><%= deck.name %></option>
+      <option  value="<%= deck.id %>" ><%= deck.name %>        -- <%= deck.cards.count %> Cards</option>
       <% end %>
     </select>
-    <input type='submit' value='Play!'>
+    <input class="play" type='submit' value='Play!'>
   </form>
-</table>
+
 
   <br>
-
-  <a href="/user/logout">Logout</a>
 </div>

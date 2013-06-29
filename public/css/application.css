@@ -34,6 +34,8 @@ h2{
   color: white;
   font-family: 'Offside', cursive;
   position: relative;
+  float: left;
+  line-height: 0em;
 }
 
 .top-nav {
@@ -43,7 +45,19 @@ h2{
   padding-top: 8px;
   top: 0px;
   position: fixed;
+}
+.logout{
+  line-height: 2em;
+  margin-right: 10px;
+  float:right;
+  font-family: 'Offside', cursive;
+  position: relative;
+  border-radius: 8px;
+ top: -50px;
+}
 
+.logout:hover{
+  background-color: gray;
 }
 
 .login {
@@ -53,7 +67,31 @@ h2{
   margin: 20px auto;
   width: 250px;
   padding: 0px 20px 20px 20px;
-  border: 3px solid black;
+  border: 3px solid;
   border-radius: 8px;
   text-align: center;
+}
+
+.screen{
+  width: 940px;
+  text-align: center;
+  border: 3px solid;
+  margin: auto auto;
+  vertical-align: middle;
+  position: relative;
+  top: 150px;
+  border-radius: 8px;
+  padding-top: 14px;
+}
+
+.drop_down{
+  height: 50px;
+}
+
+.play{
+  border-radius: 8px;
+  width: 60px;
+  height: 40px;
+  background-color: #3498DB;
+  color: white;
 }
