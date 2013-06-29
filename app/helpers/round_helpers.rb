@@ -1,6 +1,7 @@
 helpers do
-  def get_unseen_cards  
-    seen_cards = current_user.rounds.map {|round| round.guesses.where(is_correct: true).map {|guess| guess.card.id}}.flatten
-    Card.where('id NOT IN (?)',seen_cards << -1)
+  def get_unseen_card(deck)
+    id = (deck.cards.pluck(:id) - Guess.pluck(:card_id)).sample
+    return nil if id.blank?
+    Card.find(id)
   end
 end

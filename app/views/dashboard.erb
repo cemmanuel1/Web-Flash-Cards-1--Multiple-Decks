@@ -11,6 +11,8 @@
 <h1>Welcome to Flash Me! <%= @user.name %></h1>
 
 <div class="screen">
+<div class="container">
+  <h1>Welcome to FlashCards <%= @user.name %></h1>
 
   <form method="post" action="/round/play">
     <select class="drop_down" name="deck_id">
@@ -23,4 +25,17 @@
 
 
   <br>
+  
+  <h3>Previous Rounds</h3>
+  <% current_user.rounds.each do |round| %>
+    <div class="deck_name"><%= round.deck.name%></div>
+    <div class="number_correct"><%= round.number_correct%></div>
+    <div class="number_incorrect"><%= round.number_incorrect%></div>
+    <a href="/round/#{round.id}/flipcard">Continue</a>
+    <a href="/round/#{round.id}/results">Results</a>
+    <% end %>
+
+
+  <br>
+  <a href="/user/logout">Logout</a>
 </div>

@@ -1,0 +1,15 @@
+<div id="results">
+  <h1>END OF THE LINE</h1>
+  <table>
+    <th>Question
+  <% @round.guesses.each do |guess| %>
+    <div class="question"><%= guess.card.question %></div>
+    <div class="answer"><%= guess.answer %></div>
+    <div class="is_correct"><%= guess.is_correct %></div>
+    <% if guess.is_correct == false %>
+      <a class="show_answer">Click To Show Answer</a>
+    <% end %>
+  <% end %>
+
+  <a href="/">Home</a>
+</div>
