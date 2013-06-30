@@ -1,6 +1,6 @@
 
 <div class= "top-nav">
-  <h2>Flash Me!</h2> 
+  <h2> <a class="home" href="/user/dashboard">Flash Me!</a></h2>
   <img src="/bolt.gif" alt="bolt" width='50px' height='50px'>
 
 </div>
@@ -11,16 +11,12 @@
   <h3>Sign Up!!</h3>
 
 
+
     <p style="color:red">
       <% @user.errors.each do |field,message| %>
       <%= message %>
       <% end %>
     </p>
-<!-- 
-
-  <% unless @user.errors.blank? %>
-    <p style="color:red"><%= @user.errors[:email][0] %></p>
-  <% end %> -->
 
   
   <br>

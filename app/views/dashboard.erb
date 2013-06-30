@@ -1,5 +1,5 @@
 <div class= "top-nav">
-  <h2>Flash Me!</h2> 
+    <h2> <a class="home" href="/user/dashboard">Flash Me!</a></h2>
   <img src="/bolt.gif" alt="bolt" width='50px' height='50px'>
 
 
@@ -30,12 +30,9 @@
       <div class="deck_name"><%= round.deck.name%></div>
       Correct: <div class="number_correct"><%= round.number_correct%></div>
       Incorrect: <div class="number_incorrect"><%= round.number_incorrect%></div>
-      <%if @card %>
-      <a href="/round/<%= round.id %>/results">Results</a>
-      <%else%> 
-      <a href="/round/<%= round.id %>/flipcard">Continue</a>
-      <a href="/round/<%= round.id %>/results">Results</a>
-      <% end %>
+      <a class="continue" href="/round/<%= round.id %>/flipcard">Continue</a>
+      <a class="continue" href="/round/<%= round.id %>/results">Results</a>
+     
       <br>
       <br>
       <% end %>

@@ -38,6 +38,24 @@ h2{
   line-height: 0em;
 }
 
+h3{
+  font-size: 30px;
+}
+
+a.home:hover{
+  color: gray;
+  text-decoration: none;
+}
+
+a.home:visited{
+  color: white;
+  text-decoration: none;
+}
+
+a.home {
+  color: white;
+  text-decoration: none;
+}
 .top-nav {
   background-color: #3498DB;
   width: 100%;
@@ -53,7 +71,7 @@ h2{
   font-family: 'Offside', cursive;
   position: relative;
   border-radius: 8px;
- top: -50px;
+  top: -50px;
 }
 
 .logout:hover{
@@ -66,74 +84,139 @@ h2{
   text-align: right;
   margin-left:70%;}
 
+
 .login {
-  font-family: 'Offside', cursive;
-  top: 150px;
-  position: relative;
-  margin: 20px auto;
-  width: 250px;
-  padding: 0px 20px 20px 20px;
-  border: 3px solid;
-  border-radius: 8px;
-  text-align: center;
+    font-family: 'Offside', cursive;
+    top: 150px;
+    position: relative;
+    margin: 20px auto;
+    width: 250px;
+    padding: 0px 20px 20px 20px;
+    border: 3px solid;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .drop_down{
+    height: 50px;
+  }
+
+  .screen{
+    width: 500px;
+    text-align: center;
+    border: 3px solid;
+    margin: auto auto;
+    vertical-align: middle;
+    position: relative;
+    top: 160px;
+    border-radius: 8px;
+    padding-top: 14px;
+    background-image:url(/chalkboard.gif);
+    color: white;
+    font-family: 'Offside', cursive;
+    z-index: 9;
+  }
+  .results{
+    width: 500px;
+    text-align: center;
+    border: 3px solid;
+    margin: auto auto;
+    vertical-align: middle;
+    position: relative;
+    top: 160px;
+    border-radius: 8px;
+    padding-top: 14px;
+    font-family: 'Offside', cursive;
+    z-index: 9;
+    background-image:url(/chalkboard.gif);
+    color: white;
+  }
+
+
+  a.continue:visited{
+    color: white;
+  }
+
+  .dashboard_welcome{
+    font-family: 'Offside', cursive;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 120px;
+    z-index: 9;
+    font-size: 40px;
+  }
+  .deck_name {
+    font-family: 'Offside', cursive;
+    font-weight: bold;
+    border: 1px solid;
+    width: 180px;
+    margin: auto auto;
+    font-size: 20px;
+  }
+  .number_correct{
+    color: green;
+  }
+
+  .number_incorrect{
+    color: red;
+  }
+
+  .correct{
+    color: green;
+  }
+
+.incorrect{
+  color: red;
 }
 
-.screen{
-  width: 940px;
-  text-align: center;
-  border: 3px solid;
-  margin: auto auto;
-  vertical-align: middle;
-  position: relative;
-  top: 150px;
-  border-radius: 8px;
-  padding-top: 14px;
+.question{
+ /* font-weight: bold;*/
 }
+  .drop_down {
+    height: 50px;
+  }
 
-.drop_down{
-  height: 50px;
-}
+  .play{
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+    background-color: #3498DB;
+    color: white;
+  }
 
-.play{
-  border-radius: 8px;
-  width: 60px;
-  height: 40px;
-  background-color: #3498DB;
-  color: white;
-}
+  .guess{
+    border-radius: 8px;
+  }
 
-.guess{
-  border-radius: 8px;
-}
+  .guess:hover{
+    background-color: black;
+    color: white;
+  }
 
-.guess:hover{
-  background-color: black;
-  color: white;
-}
+  .space{
+  }
+  .q {
+    font-size: 32px;
+    text-decoration: bold;
+  }
 
-.space{
-}
-.q {
-  font-size: 32px;
-  text-decoration: bold;
-}
-
-.guess {
+  .guess {
     margin-top:180px;
-}
+  }
 
-#card {
-  background-image: url('/yellow.gif');
-  font-family: 'Offside', cursive;
-  text-align: center;
-  border-radius: 12px;
-  top: 200px;
-  line-height: 5em;
-  position: relative;
-  padding: 20px 20px 20px 20px;
-  border: 1px solid black;
-  width: 600px;
-  margin: auto auto;
-  margin-bottom: 20px;
-  height: 300px;
-}
+  #card {
+    background-image: url('/yellow.gif');
+    font-family: 'Offside', cursive;
+    text-align: center;
+    border-radius: 12px;
+    top: 200px;
+    line-height: 5em;
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    border: 1px solid black;
+    width: 600px;
+    margin: auto auto;
+    margin-bottom: 20px;
+    height: 300px;
+  }
