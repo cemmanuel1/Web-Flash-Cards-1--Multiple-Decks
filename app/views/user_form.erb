@@ -1,11 +1,11 @@
 <div class="container">
-
+  <h2> <a class="home" href="/user/dashboard">Flash Me!</a></h2>
 
   <h1>Sign Up!!</h1>
 
 
   <% unless @user.errors.blank? %>
-    <p style="color:red"><%= @user.errors[:email] %></p>
+  <p style="color:red"><%= @user.errors[:email] %></p>
   <% end %>
 
   
