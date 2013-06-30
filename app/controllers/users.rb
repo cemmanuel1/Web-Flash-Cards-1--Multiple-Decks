@@ -13,6 +13,7 @@ end
 
 post "/user/create" do
   @user = User.new(params[:user])
+  p @user
 
   if @user.valid?
     @user.save

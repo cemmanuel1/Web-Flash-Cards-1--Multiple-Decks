@@ -3,7 +3,7 @@ require 'Digest'
 class User < ActiveRecord::Base
   validates :name, :email, :password, presence: true
   validates :email, :format => { :with => /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/, :message => "Invalid Email" }
-  validates :email, :uniqueness => true
+  validates :email, uniqueness: { message: "Email already taken!"}
 
   has_many :rounds, dependent: :destroy
 

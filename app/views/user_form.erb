@@ -1,19 +1,33 @@
-<div class="container">
+
+<div class= "top-nav">
+  <h2>Flash Me!</h2> 
+  <img src="/bolt.gif" alt="bolt" width='50px' height='50px'>
+
+</div>
+
+<div class="login">
 
 
-  <h1>Sign Up!!</h1>
+  <h3>Sign Up!!</h3>
 
+
+    <p style="color:red">
+      <% @user.errors.each do |field,message| %>
+      <%= message %>
+      <% end %>
+    </p>
+<!-- 
 
   <% unless @user.errors.blank? %>
-    <p style="color:red"><%= @user.errors[:email] %></p>
-  <% end %>
+    <p style="color:red"><%= @user.errors[:email][0] %></p>
+  <% end %> -->
 
   
   <br>
   <form id="user_form" action="/user/create" method="post">
-    <input type="text" name="user[name]" placeholder="Enter Your Name Here:" value="<%= @user.name%>"><br><br>
-    <input type="text" name="user[email]" placeholder="Enter Your Email Here:"><br><br>
-    <input type="password" name="user[password]" placeholder="Enter Your Password Here:"><br><br>
+    <input type="text" name="user[name]" placeholder="Name Here:" value="<%= @user.name%>"><br><br>
+    <input type="text" name="user[email]" placeholder="Email Here:"><br><br>
+    <input type="password" name="user[password]" placeholder="Password Here:"><br><br>
     <!-- <input type="text" name="user[confirm_password]" placeholder="Confirm Password:"><br><br>-->
     <input type="submit" value="Create!">
 
