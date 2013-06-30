@@ -20,7 +20,9 @@
 
           <%else%>
             <span class="incorrect"> Incorrect </span> <br>
-            Correct Answer: <%= guess.card.answer %>
+            
+            <span class="reveal_answer">Click Reveal Answer</span>
+            <span class="correct_answer" style="display:none">Correct Answer: <%= guess.card.answer %></span>
           <% end %>
         </div>
         <br>

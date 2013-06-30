@@ -17,4 +17,10 @@ $(document).ready(function() {
   $('#home').on('click',function(){
     window.location = "/";
   });
+
+  $('.reveal_answer').on('click',function(){
+    $(this).closest('.is_correct').find('.correct_answer').fadeIn();
+    $(this).closest('.is_correct').find('.incorrect').fadeOut();
+    $(this).remove();
+  });
 });

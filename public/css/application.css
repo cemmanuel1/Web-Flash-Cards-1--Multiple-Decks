@@ -206,6 +206,11 @@ a.home {
     margin-top:180px;
   }
 
+  .reveal_answer {
+    border: 1px dashed white;
+    cursor: pointer;
+  }
+
   #card {
     background-image: url('/yellow.gif');
     font-family: 'Offside', cursive;
