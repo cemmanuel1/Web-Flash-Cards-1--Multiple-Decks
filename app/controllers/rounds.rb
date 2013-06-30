@@ -6,8 +6,6 @@ end
 get '/round/:round_id/flipcard' do
   @round = Round.find(params[:round_id])
   @card = get_unseen_card(@round)
-  p "CARD BELOW"
-  p @card
   redirect "/round/#{@round.id}/results" unless @card
   @guess = Guess.new
   erb :show_card
@@ -22,14 +20,14 @@ post '/round/:round_id/card/:card_id/submit' do
 end
 
 get '/round/:round_id/results' do
-@round = Round.find(params[:round_id])
+  @round = Round.find(params[:round_id])
+  redirect "/" if @round.guesses.empty?
   erb :round_results
 end
 
-# Click on play
-
-# Create New Round
-
-# loop --> until no more cards. Or exit.
-#   Show him a card (Ensure its not seen by him before)
-#   ask for an answer
+get '/round/:round_id/delete' do
+  @round = Round.find(params[:round_id])
+  @round.guesses.delete_all
+  @round.delete
+  redirect "/"
+end

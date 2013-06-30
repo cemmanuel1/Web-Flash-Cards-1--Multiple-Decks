@@ -12,24 +12,20 @@
 
       <h3> Results </h3>
       <% @round.guesses.each do |guess| %>
-      <div class="question"><%= guess.card.question %></div>
-      <div class="answer"> <%= "Your Answer: " %><%= guess.answer %></div>
-      <div class="is_correct">
-        <%if guess.is_correct %>
-        <span class="correct"> correct </span>
+        <div class="question"><%= guess.card.question %></div>
+        <div class="answer"> <%= "Your Answer: " %><%= guess.answer %></div>
+        <div class="is_correct">
+          <%if guess.is_correct %>
+            <span class="correct"> correct </span>
 
-        <%else%>
-        <span class="incorrect"> Incorrect </span> <br>
-        Correct Answer: <%= guess.card.answer %>
-        <% end %>
-      </div>
-    <!--   <% if guess.is_correct == false %> -->
-     <!--  <a class="show_answer">Click To Show Answer</a> -->
-      <br>
-      <br>
-
+          <%else%>
+            <span class="incorrect"> Incorrect </span> <br>
+            Correct Answer: <%= guess.card.answer %>
+          <% end %>
+        </div>
+        <br>
+        <br>
       <% end %>
-      <% end %>
-      <h1>END OF THE LINE</h1>
-
+      <button id="home">Back To Home</button>
+      <br>
     </div>

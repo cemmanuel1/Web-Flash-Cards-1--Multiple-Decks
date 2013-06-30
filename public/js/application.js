@@ -8,4 +8,13 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+  $('#exit').on('click',function(event){
+    event.preventDefault();
+    window.location = "/round/" + $(this).attr('data-id') + "/results";
+  });
+
+  $('#home').on('click',function(){
+    window.location = "/";
+  });
 });

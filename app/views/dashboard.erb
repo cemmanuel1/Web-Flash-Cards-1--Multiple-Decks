@@ -1,43 +1,50 @@
 <div class= "top-nav">
-    <h2> <a class="home" href="/user/dashboard">Flash Me!</a></h2>
+  <h2> <a class="home" href="/user/dashboard">Flash Me!</a></h2>
   <img src="/bolt.gif" alt="bolt" width='50px' height='50px'>
 
 
   <form action="/user/logout" method="get">
-    <button class="logout" type="submit" formmethod="get"  formaction="/user/logout">Logout</button > </form>
+    <button class="logout" type="submit" formmethod="get"  formaction="/user/logout">Logout</button >
+    </form>
 
-    </div>
-    <div class="dashboard_welcome"> 
+</div>
+  
+<div class="dashboard_welcome"> 
     Welcome to Flash Me! <%= @user.name %>
-    </div>
+</div>
 
-    <div class="screen">
+<div class="screen">
 
-      <form method="post" action="/round/play">
-        <select class="drop_down" name="deck_id">
-          <% @decks.each do |deck| %>
-          <option  value="<%= deck.id %>" ><%= deck.name %>        -- <%= deck.cards.count %> Cards</option>
-          <% end %>
-        </select>
-        <input class="play" type='submit' value='Play!'>
-      </form>
-
-
-      <br>
-
-      <h3><u>Previous Rounds</u></h3>
-      <% current_user.rounds.each do |round| %>
-      <div class="deck_name"><%= round.deck.name%></div>
-      Correct: <div class="number_correct"><%= round.number_correct%></div>
-      Incorrect: <div class="number_incorrect"><%= round.number_incorrect%></div>
-      <a class="continue" href="/round/<%= round.id %>/flipcard">Continue</a>
-      <a class="continue" href="/round/<%= round.id %>/results">Results</a>
-     
-      <br>
-      <br>
+  <form method="post" action="/round/play">
+    <select class="drop_down" name="deck_id">
+      <% @decks.each do |deck| %>
+      <option  value="<%= deck.id %>" ><%= deck.name %>        -- <%= deck.cards.count %> Cards</option>
       <% end %>
+    </select>
+  <input class="play" type='submit' value='Play!'>
+  </form>
 
 
-      <br>
-    </div>
+  <br>
+    <% unless current_user.rounds.empty? %>
+      <h3><u>Previous Rounds</u></h3>
+    <% end %>
+
+    <% current_user.rounds.each do |round| %>
+    <div class="deck_name"><%= round.deck.name%></div>
+    Correct: <div class="number_correct"><%= round.number_correct%></div>
+    Incorrect: <div class="number_incorrect"><%= round.number_incorrect%></div>
+    <% unless round.guesses.count == round.deck.cards.count %>
+      <a class="continue" href="/round/<%= round.id %>/flipcard">Continue</a>
+    <% end %>
+    <a class="continue" href="/round/<%= round.id %>/results">Results</a>
+    <a class="continue" href="/round/<%= round.id %>/delete">Delete</a>
+
+    <br>
+    <br>
+    <% end %>
+
+
+    <br>
   </div>
+</div>
